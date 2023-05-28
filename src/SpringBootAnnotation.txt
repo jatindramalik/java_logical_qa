@@ -1,0 +1,32 @@
+    @SpringBootApplication: Marks the main class of a Spring Boot application and enables auto-configuration and component scanning.
+    @Controller: Marks a class as a controller in the MVC pattern.
+    @RestController: Combines @Controller and @ResponseBody for RESTful web services.
+    @RequestMapping: Maps HTTP requests to controller methods.
+    @PathVariable: Binds a method parameter to a path variable in a request URL.
+    @RequestParam: Binds a method parameter to a query parameter in a request URL.
+    @Autowired: Automatically injects dependencies.
+    @Component: Marks a class as a Spring-managed component.
+    @Repository: Indicates a data access object (DAO) or repository component.
+    @Service: Indicates a service component.
+    @Configuration: Marks a class as a configuration class.
+    @EnableAutoConfiguration: Enables Spring Boot's auto-configuration mechanism.
+    @Conditional: Defines a condition for bean creation or application configuration.
+    @Value: Injects values from property files or environment variables.
+    @EnableJpaRepositories: Enables JPA repositories.
+    @EnableCaching: Enables caching support.
+    @EnableScheduling: Enables scheduling of tasks.
+    @EnableSwagger2: Enables Swagger documentation for APIs.
+    @Bean: Declares a bean in the Spring application context.
+    @ComponentScan: Specifies the base package(s) for component scanning.
+    @ConfigurationProperties: Binds external configuration properties to a Java class.
+    @EnableTransactionManagement: Enables declarative transaction management.
+    @EnableWebMvc: Enables full Spring MVC configuration.
+    @ExceptionHandler: Defines methods that handle specific exceptions in a controller.
+    @ResponseBody: Indicates that the return value of a method should be serialized into the response body.
+    @Valid: Triggers validation on a method parameter or return value.
+    @Async: Indicates that a method should be executed asynchronously.
+    @ConditionalOnProperty: Enables or disables beans or configuration based on property presence or value.
+    @ConditionalOnClass: Enables or disables beans or configuration based on class presence.
+    @Profile: Activates beans or configuration based on specified profile(s).
+    @EnableConfigurationProperties: Enables configuration binding of @ConfigurationProperties classes.
+    @RestControllerAdvice: Defines global exception handling and request/response pre- and post-processing for RESTful controllers.

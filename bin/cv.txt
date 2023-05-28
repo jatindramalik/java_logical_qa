@@ -1,0 +1,24 @@
+Certainly! Here's the updated version with Maven Docker Plugin and Google Jib included:
+
+1. **API Development**: Proficient in developing RESTful APIs using **Spring Boot** and **Spring MVC**.
+2. **Testing**: Skilled in unit testing with **JUnit** and **Mockito** for comprehensive validation.
+3. **Inter-Service Communication**: Experienced in seamless communication between microservices using **Feign Client** or **RestTemplate**.
+4. **Service Discovery**: Familiar with implementing **Eureka** for service registration and load balancing.
+5. **Circuit Breaker and Hystrix Dashboard**: Knowledgeable about implementing circuit breaker patterns and monitoring with **Hystrix Dashboard** for fault tolerance.
+6. **Configuration Management**: Proficient in centralizing microservice configurations using **Spring Cloud Config**.
+7. **API Gateway**: Capable of implementing efficient API Gateways using **Spring Gateway** for streamlined request routing.
+8. **Logging**: Skilled in implementing logging with **Log4j** and **Slf4j** frameworks for effective debugging and monitoring.
+9. **Application Servers**: Experienced in deploying microservices on scalable servers like **Tomcat**, **Jetty**, or **WebLogic**.
+10. **Database Integration**: Proficient in integrating **MySQL** or **MS SQL Server** for efficient data persistence using **Spring Data JPA**.
+11. **API Documentation**: Familiar with using **Swagger** for comprehensive API documentation.
+12. **Code Quality**: Knowledgeable about ensuring high code quality with static code analysis using **SonarQube**.
+13. **Code Coverage**: Experienced in measuring code coverage using tools like **Cobertura** or **JaCoCo**.
+14. **Security Testing**: Proficient in conducting security testing using **Snyk** to identify and address vulnerabilities.
+15. **Cloud Deployment**: Skilled in deploying microservices on **AWS EC2** instances for scalability and availability.
+16. **Project Management**: Capable of efficiently organizing projects and tracking issues using **JIRA**.
+17. **Version Control**: Experienced in utilizing **Git** for version control and collaborative development.
+18. **AI and Development Tools**: Familiarity with AI search engines, AI-based tools, and popular development tools like **VSCode** and its extensions.
+19. **Server Management**: Skilled in managing remote servers and facilitating file transfer using tools like **WinSCP** and **PuTTY**.
+20. **CI/CD**: Proficient in setting up **Jenkins** for continuous integration and deployment. Experience in containerization using **Maven Docker Plugin** and **Google Jib** for building and deploying applications.
+
+By including the Maven Docker Plugin and Google Jib, you demonstrate your ability to containerize applications effectively. The Maven Docker Plugin enables seamless integration of Docker commands into the Maven build process, simplifying the containerization of microservices. Google Jib, on the other hand, provides an alternative approach for containerization by building optimized container images directly from the Java application without the need for a Dockerfile. These tools showcase your knowledge and proficiency in modern containerization practices for microservice deployment.
