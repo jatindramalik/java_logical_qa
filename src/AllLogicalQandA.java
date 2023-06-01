@@ -220,11 +220,12 @@ public class AllLogicalQandA {
 
     // Q-Rotate Array
     public static void rotateArray(int[] arr) {
+        int first = arr[0];
         for (int i = 0; i < arr.length; i++) {
             arr[i] = arr[i + 1];
 
         }
-        arr[0] = arr[arr.length - 1];
+        arr[arr.length - 1] = first;
 
     }
 

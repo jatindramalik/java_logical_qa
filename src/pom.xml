@@ -1,0 +1,93 @@
+<build>
+    <plugins>
+        <!-- JaCoCo Plugin -->
+        <plugin>
+            <groupId>org.jacoco</groupId>
+            <artifactId>jacoco-maven-plugin</artifactId>
+            <version>0.8.7</version>
+            <executions>
+                <!-- Pre-test phase: instrument the code -->
+                <execution>
+                    <id>pre-test</id>
+                    <goals>
+                        <goal>prepare-agent</goal>
+                    </goals>
+                    <configuration>
+                        <!-- Exclusion patterns -->
+                        <excludes>
+                            <exclude>com/example/excluded/**</exclude>
+                        </excludes>
+                        <!-- Inclusion patterns -->
+                        <includes>
+                            <include>com/example/included/**</include>
+                        </includes>
+                    </configuration>
+                </execution>
+                <!-- Post-test phase: generate JaCoCo reports -->
+                <execution>
+                    <id>post-test</id>
+                    <phase>test</phase>
+                    <goals>
+                        <goal>report</goal>
+                    </goals>
+                </execution>
+            </executions>
+        </plugin>
+    </plugins>
+</build>
+
+<reporting>
+    <plugins>
+        <!-- JaCoCo Plugin -->
+        <plugin>
+            <groupId>org.jacoco</groupId>
+            <artifactId>jacoco-maven-plugin</artifactId>
+            <version>0.8.7</version>
+            <reportSets>
+                <reportSet>
+                    <reports>
+                        <!-- Coverage report -->
+                        <report>report</report>
+                    </reports>
+                </reportSet>
+            </reportSets>
+        </plugin>
+    </plugins>
+</reporting>
+
+<profiles>
+    <profile>
+        <id>code-coverage-check</id>
+        <build>
+            <plugins>
+                <!-- Maven Enforcer Plugin: Code coverage check -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-enforcer-plugin</artifactId>
+                    <version>3.0.0-M3</version>
+                    <executions>
+                        <execution>
+                            <id>enforce-code-coverage</id>
+                            <goals>
+                                <goal>enforce</goal>
+                            </goals>
+                            <configuration>
+                                <rules>
+                                    <requireCodeCoverage>
+                                        <enabled>true</enabled>
+                                        <!-- Minimum required code coverage percentage -->
+                                        <minimum>80%</minimum>
+                                        <!-- Exclusion patterns -->
+                                        <excludes>
+                                            <exclude>com/example/excluded/**</exclude>
+                                        </excludes>
+                                    </requireCodeCoverage>
+                                </rules>
+                            </configuration>
+                        </execution>
+                    </executions>
+                </plugin>
+            </plugins>
+        </build>
+    </profile>
+</profiles>
