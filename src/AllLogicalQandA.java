@@ -185,7 +185,7 @@ public class AllLogicalQandA {
             }
         }
         for (int i = 0; i < arr2.length; i++) {
-            if (arr1[i] / 2 == 0) {
+            if (arr2[i] / 2 == 0) {
                 evenList.add(i);
             }
         }
@@ -201,11 +201,12 @@ public class AllLogicalQandA {
         return result;
     }
 
-    // Q-Reverse in place
+    // Q-Reverse in placec
     public static int[] revereInPlace(int[] arr) {
-        int temp = arr[0];
 
         for (int i = 0; i < arr.length / 2; i++) {
+            int temp = arr[i];
+
             arr[i] = arr[arr.length - i - 1];
             arr[arr.length - i - 1] = temp;
         }
