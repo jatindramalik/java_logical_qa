@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 import java.util.OptionalInt;
 import java.util.function.IntPredicate;
 import java.util.stream.Stream;
@@ -79,7 +80,35 @@ public class ArrayLL {
         arr[0]=arr[arr.length-1];
 
     }
+    //Array iteration
+    public static void arrayRotation(int[] arr){
 
+        for(int i =0;i<arr.length;i++){
+            System.out.println(arr[i]);
+        }
+
+        for(int i = arr.length-1;i>=0;i--){
+            System.out.println(arr[i]);
+        }
+
+        for(int i = arr.length-1;i >=0;i=i-2){
+            System.out.println(arr[i]);
+        }
+        for(Integer item : arr){
+            System.out.println(item);
+        }
+        Arrays.stream(arr).forEach(System.out::println);
+    }
+    //Find the second smallest
+    public static void secondSmallest(int[] arr){
+
+        Arrays.sort(arr);
+        for(int i = 0;i < arr.length;i++){
+            if(!Objects.equals(arr[i],arr[i+1])){
+                System.out.println("Second smallest is :" + arr[i+1]);
+            }
+        }
+    }
 
     public static void main(String[] args) {
 

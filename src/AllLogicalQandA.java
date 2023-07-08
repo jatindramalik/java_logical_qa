@@ -193,11 +193,14 @@ public class AllLogicalQandA {
     }
 
     // Q-Reverse array
-    public static int[] reverseArray(int[] arr) {
-        int[] result = new int[arr.length - 1];
-        for (int i = 0; i < arr.length - 1; i++) {
-            result[i] = arr[arr.length - 1 - i];
+    public static int[] revereArray(int[] arr){
+        int[] result = new  int[arr.length-1];
+        for(int i = 0;i < arr.length-1;i++){
+            int temp = arr[i];
+            result[i] = arr[arr.length-1-i];
+            arr[arr.length-1-i] = temp;
         }
+
         return result;
     }
 
