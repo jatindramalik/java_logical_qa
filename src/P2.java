@@ -65,7 +65,20 @@ public class P2 {
         return ans;
     }
 
-    // Swap two no without thired variable
+    //**Method 2 */
+    public static void binaryAdd2(String s1,String s2){
+        int i = Integer.parseInt(s1, 2);
+        int j = Integer.parseInt(s2,2);
+        
+        int sum = i + j;
+        String sumBinary = Integer.toBinaryString(sum);
+        System.out.println(s1);        
+        System.out.println(s2);
+        System.out.println(sumBinary);
+
+    }
+
+    //** */ Swap two no without thired variable
     public static void swapTwono(int a, int b) {
         a = a + b;
         b = a - b;
@@ -75,7 +88,7 @@ public class P2 {
         System.out.println("B is " + b);
     }
 
-    // Swap two no
+    //** */ Swap two no
     public static void swapTwono2(int a, int b) {
         int c = a;
         a = b;
@@ -85,7 +98,7 @@ public class P2 {
 
     }
 
-    // Q-Find Largest and smallest no from int array?
+    //** */ Q-Find Largest and smallest no from int array?
     public static void findLargeAndSmall(int[] arr) {
         int largest = arr[0];
         int smallest = arr[0];
@@ -100,7 +113,7 @@ public class P2 {
         System.out.println(smallest + " Smallest NO rahish");
     }
 
-    // String reverse
+    //** */ String reverse
     public static void reverseString(String str) {
         String rev = "";
 
@@ -110,8 +123,10 @@ public class P2 {
         System.out.println("Reverse String is :" + rev);
     }
 
-    // No of occurance
+    //** */ No of occurance
     public static void noOfOccurance(String str, char c) {
+
+        // long count2 = str.chars().filter(x->x==c).count();
 
         int count = 0;
         for (int i = 0; i < str.length(); i++) {
@@ -122,7 +137,7 @@ public class P2 {
         System.out.println("no of occurance is :" + count);
     }
 
-    // sum of all the no present in array
+    //** */ sum of all the no present in array
     public static void sum(int[] arr) {
         int sum = Arrays.stream(arr).sum();
         System.out.println(sum);

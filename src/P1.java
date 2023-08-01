@@ -58,6 +58,34 @@ public class P1 {
 
     }
 
+    public static void binaryAdd(String s1, String s2) {
+        int i = Integer.parseInt(s1, 2);
+        int j = Integer.parseInt(s2, 2);
+
+        int sum = i + j;
+        String sumBinary = Integer.toBinaryString(sum);
+        System.out.println(s1);
+        System.out.println(s2);
+        System.out.println(sumBinary);
+
+    }
+
+    // *write java code for swap string without taking third variable */
+    public static void swapString(String str1, String str2) {
+        
+        System.out.println("Before swapping: str1 = " + str1 + ", str2 = " + str2);
+
+        // Concatenate str1 and str2
+        str1 = str1 + str2; 
+        // Get original str1 and assign it to str2
+        str2 = str1.substring(0, str1.length() - str2.length()); 
+        // Get original str2 and assign it to str1
+        str1 = str1.substring(str2.length()); 
+
+        System.out.println("After swapping: str1 = " + str1 + ", str2 = " + str2);
+
+    }
+
     // Q-Swap two no by taking thired variable
     public static void swapTwono(int A, int B) {
         int C = A;
@@ -99,6 +127,10 @@ public class P1 {
         for (int i = s.length() - 1; i >= 0; i--) {
             rev = rev + s.charAt(i);
         }
+        System.out.println(rev);
+    }
+    public static void reverseString2(String str){
+        String rev = new StringBuilder(str).reverse().toString();
         System.out.println(rev);
     }
 
@@ -319,18 +351,78 @@ public class P1 {
         }
     }
 
-    //Q-Fibonacci Serise
-    public static void fibonacciSerises(int num){
+    // Q-Fibonacci Serise
+    public static void fibonacciSerises(int num) {
         int f_no = 0;
         int s_no = 1;
-        int next_no = f_no+s_no;
-        for(int i = 0;i<num;i++){
+        int next_no = f_no + s_no;
+        for (int i = 0; i < num; i++) {
             System.out.println(next_no);
             f_no = s_no;
             s_no = next_no;
         }
     }
 
+    //
+    // public static Object lengthOfLongestSubstringJava8(String s) {
+    // Set<Character> set = new HashSet<>();
+    // return s.chars()
+    // .mapToObj(c -> (char) c)
+    // .reduce(new Object[]{0, 0}, (a, c) -> {
+    // if (!set.contains(c)) {
+    // set.add(c);
+    // a[1] = Math.max((int) a[1], set.size());
+    // } else {
+    // set.remove(s.charAt((int) a[0]++));
+    // a = new Object[]{a[0], a[1]};
+    // }
+    // return a;
+    // }, (a, b) -> null)[1];
+    // }
+    public static int lengthOfLongestSubstring(String s) {
+        int n = s.length();
+        int[] maxLength = { 0 };
+        int[] left = { 0 };
+        int[] right = { 0 };
+        Set<Character> charSet = new HashSet<>();
+
+        s.chars().forEach(c -> {
+            if (!charSet.contains((char) c)) {
+                charSet.add((char) c);
+                maxLength[0] = Math.max(maxLength[0], right[0] - left[0] + 1);
+                right[0]++;
+            } else {
+                charSet.remove(s.charAt(left[0]));
+                left[0]++;
+            }
+        });
+
+        return maxLength[0];
+    }
+
+    /*
+     * public static int lengthOfLongestSubstring(String s) {
+     * int n = s.length();
+     * int maxLength = 0;
+     * int left = 0;
+     * int right = 0;
+     * Set<Character> charSet = new HashSet<>();
+     * 
+     * while (right < n) {
+     * char c = s.charAt(right);
+     * if (!charSet.contains(c)) {
+     * charSet.add(c);
+     * maxLength = Math.max(maxLength, right - left + 1);
+     * right++;
+     * } else {
+     * charSet.remove(s.charAt(left));
+     * left++;
+     * }
+     * }
+     * 
+     * return maxLength;
+     * }
+     */
     public static void main(String[] args) {
 
         // System.out.println(addBinaryNo("1000110", "010"));
