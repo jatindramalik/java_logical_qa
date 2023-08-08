@@ -155,6 +155,7 @@ public class P1 {
     public static int arraySum(int[] arr) {
         return Arrays.stream(arr).reduce(0, (a, b) -> a + b);
     }
+   
 
     // Q-Numbler palindrome
     public static void palindromeCheck(int num) {
@@ -226,7 +227,9 @@ public class P1 {
     public static int[] reverseArray(int[] arr) {
         int[] result = new int[arr.length - 1];
         for (int i = 0; i < arr.length - 1; i++) {
+            int temp = arr[i];
             result[i] = arr[arr.length - 1 - i];
+            arr[arr.length-1-i] =temp;
         }
         return result;
     }
@@ -362,6 +365,7 @@ public class P1 {
             s_no = next_no;
         }
     }
+    
 
     //
     // public static Object lengthOfLongestSubstringJava8(String s) {
@@ -423,6 +427,36 @@ public class P1 {
      * return maxLength;
      * }
      */
+     //**Q-Reverse word letter of string of words */
+    public static void reverseStringWord(String str){
+        StringBuilder sb = new StringBuilder();
+        String[] s = str.split(" ");
+        for(String word : s){
+            StringBuilder reverseWord = new StringBuilder(word);
+             reverseWord.reverse();
+             sb.append(reverseWord).append(" ");
+        }
+        System.out.println(sb.toString().trim());
+    }
+    public static boolean areAnagrams(String str1, String str2) {
+        // Remove spaces and convert the strings to lowercase for case-insensitive comparison
+        str1 = str1.replaceAll("\\s", "").toLowerCase();
+        str2 = str2.replaceAll("\\s", "").toLowerCase();
+
+        // Check if the lengths of both strings are the same
+        if (str1.length() != str2.length()) {
+            return false;
+        }
+
+        // Convert strings to char arrays and sort them
+        char[] charArray1 = str1.toCharArray();
+        char[] charArray2 = str2.toCharArray();
+        Arrays.sort(charArray1);
+        Arrays.sort(charArray2);
+
+        // Compare sorted char arrays
+        return Arrays.equals(charArray1, charArray2);
+    }
     public static void main(String[] args) {
 
         // System.out.println(addBinaryNo("1000110", "010"));
