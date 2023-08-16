@@ -1,3 +1,4 @@
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
@@ -58,6 +59,23 @@ public class P1 {
 
     }
 
+    public static boolean isPalindrome(String s) {
+        // Remove all non-alphanumeric characters and convert to lowercase
+        String cleanedString = s.replaceAll("[^a-zA-Z0-9]", "").toLowerCase();
+
+        // Check if the cleaned string is a palindrome
+        int left = 0;
+        int right = cleanedString.length() - 1;
+        while (left < right) {
+            if (cleanedString.charAt(left) != cleanedString.charAt(right)) {
+                return false;
+            }
+            left++;
+            right--;
+        }
+        return true;
+    }
+
     public static void binaryAdd(String s1, String s2) {
         int i = Integer.parseInt(s1, 2);
         int j = Integer.parseInt(s2, 2);
@@ -72,15 +90,15 @@ public class P1 {
 
     // *write java code for swap string without taking third variable */
     public static void swapString(String str1, String str2) {
-        
+
         System.out.println("Before swapping: str1 = " + str1 + ", str2 = " + str2);
 
         // Concatenate str1 and str2
-        str1 = str1 + str2; 
+        str1 = str1 + str2;
         // Get original str1 and assign it to str2
-        str2 = str1.substring(0, str1.length() - str2.length()); 
+        str2 = str1.substring(0, str1.length() - str2.length());
         // Get original str2 and assign it to str1
-        str1 = str1.substring(str2.length()); 
+        str1 = str1.substring(str2.length());
 
         System.out.println("After swapping: str1 = " + str1 + ", str2 = " + str2);
 
@@ -129,7 +147,8 @@ public class P1 {
         }
         System.out.println(rev);
     }
-    public static void reverseString2(String str){
+
+    public static void reverseString2(String str) {
         String rev = new StringBuilder(str).reverse().toString();
         System.out.println(rev);
     }
@@ -155,7 +174,6 @@ public class P1 {
     public static int arraySum(int[] arr) {
         return Arrays.stream(arr).reduce(0, (a, b) -> a + b);
     }
-   
 
     // Q-Numbler palindrome
     public static void palindromeCheck(int num) {
@@ -229,7 +247,7 @@ public class P1 {
         for (int i = 0; i < arr.length - 1; i++) {
             int temp = arr[i];
             result[i] = arr[arr.length - 1 - i];
-            arr[arr.length-1-i] =temp;
+            arr[arr.length - 1 - i] = temp;
         }
         return result;
     }
@@ -365,7 +383,6 @@ public class P1 {
             s_no = next_no;
         }
     }
-    
 
     //
     // public static Object lengthOfLongestSubstringJava8(String s) {
@@ -427,19 +444,21 @@ public class P1 {
      * return maxLength;
      * }
      */
-     //**Q-Reverse word letter of string of words */
-    public static void reverseStringWord(String str){
+    // **Q-Reverse word letter of string of words */
+    public static void reverseStringWord(String str) {
         StringBuilder sb = new StringBuilder();
         String[] s = str.split(" ");
-        for(String word : s){
+        for (String word : s) {
             StringBuilder reverseWord = new StringBuilder(word);
-             reverseWord.reverse();
-             sb.append(reverseWord).append(" ");
+            reverseWord.reverse();
+            sb.append(reverseWord).append(" ");
         }
         System.out.println(sb.toString().trim());
     }
+
     public static boolean areAnagrams(String str1, String str2) {
-        // Remove spaces and convert the strings to lowercase for case-insensitive comparison
+        // Remove spaces and convert the strings to lowercase for case-insensitive
+        // comparison
         str1 = str1.replaceAll("\\s", "").toLowerCase();
         str2 = str2.replaceAll("\\s", "").toLowerCase();
 
@@ -457,6 +476,7 @@ public class P1 {
         // Compare sorted char arrays
         return Arrays.equals(charArray1, charArray2);
     }
+
     public static void main(String[] args) {
 
         // System.out.println(addBinaryNo("1000110", "010"));
